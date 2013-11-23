@@ -1,6 +1,7 @@
 # .bashrc
 #
 # author: murali
+# date  : 23rd-nov-2013
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
