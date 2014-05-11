@@ -1,5 +1,7 @@
 package org.bala.scratch;
 
+import org.pojomatic.Pojomatic;
+
 /**
  * User: murali
  * Time: 6/30/12 10:55 AM
@@ -7,7 +9,6 @@ package org.bala.scratch;
 public class Pair<FIRST_TYPE, SECOND_TYPE> {
 
     private final FIRST_TYPE first;
-
     private final SECOND_TYPE second;
 
     public Pair(final FIRST_TYPE first,
@@ -19,37 +20,23 @@ public class Pair<FIRST_TYPE, SECOND_TYPE> {
     public FIRST_TYPE first() {
         return first;
     }
-
     public SECOND_TYPE second() {
         return second;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pair)) return false;
-
-        Pair pair = (Pair) o;
-
-        if (first != null ? !first.equals(pair.first) : pair.first != null) return false;
-        if (second != null ? !second.equals(pair.second) : pair.second != null) return false;
-
-        return true;
+    public boolean equals(Object rhs) {
+        return Pojomatic.equals(this,rhs);
     }
 
     @Override
     public int hashCode() {
-        int result = first != null ? first.hashCode() : 0;
-        result = 31 * result + (second != null ? second.hashCode() : 0);
-        return result;
+        return Pojomatic.hashCode(this);
     }
 
     @Override
     public String toString() {
-        return "Pair{" +
-                "first=" + first +
-                ", second=" + second +
-                '}';
+        return Pojomatic.toString(this);
     }
 
     public static long getRandomNumber() {
