@@ -5,8 +5,13 @@
 .classpath
 *.iml
 *.class
+*.log
 *~
 build/
 bin/
 out/
 target/
+gradle/
+gradlew
+gradlew.bat
+settings.gradle

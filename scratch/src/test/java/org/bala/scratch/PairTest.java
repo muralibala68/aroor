@@ -28,7 +28,7 @@ public class PairTest {
     public void testPair2() {
         List mockedList = mock(List.class);
 
-        //mockedList.add("one");
+        mockedList.add("one");
         mockedList.clear();
 
         verify(mockedList).add("one");
