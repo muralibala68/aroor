@@ -1,11 +1,13 @@
 package org.bala.scratch;
 
 import org.pojomatic.Pojomatic;
+import org.pojomatic.annotations.AutoProperty;
 
 /**
  * User: murali
  * Time: 6/30/12 10:55 AM
  */
+@AutoProperty
 public class Pair<FIRST_TYPE, SECOND_TYPE> {
 
     private final FIRST_TYPE first;

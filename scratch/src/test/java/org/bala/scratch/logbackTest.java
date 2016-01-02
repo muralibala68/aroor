@@ -14,8 +14,10 @@ public class logbackTest {
     public static final Logger LOGGER = LoggerFactory.getLogger(logbackTest.class);
 
     public static void printLoggerState() {
+        LOGGER.info("<*** Begin PrintingLoggerState! ***>");
         LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
         StatusPrinter.print(lc);
+        LOGGER.info("<*** End PrintingLoggerState! ***>");
     }
 
     @Test
