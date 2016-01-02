@@ -2,17 +2,16 @@ package org.bala.closure;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
 import org.bala.md.Trade;
 
-public class VWAP {
+public class VolumeWeigtedAveragePrice {
 	private final List<Trade> trades;
 	
-	public VWAP(List<Trade> trades) {
+	public VolumeWeigtedAveragePrice(List<Trade> trades) {
 		this.trades = trades;
 	}
 	
@@ -122,11 +121,5 @@ public class VWAP {
 			  Optional.empty();
 		vwap.ifPresent(System.out::println);
 		return vwap;
-	}
-	
-	public OptionalDouble calculateSimpleAveragePrice() {
-		final OptionalDouble avg = trades.stream().mapToDouble(Trade::getPrice).average();
-		avg.ifPresent(System.out::println);
-		return avg;
 	}
 }

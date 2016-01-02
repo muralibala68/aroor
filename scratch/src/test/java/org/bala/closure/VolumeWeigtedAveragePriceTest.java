@@ -12,11 +12,11 @@ import java.util.OptionalDouble;
 import org.bala.md.Trade;
 import org.junit.Test;
 
-public class VWAPTest {
+public class VolumeWeigtedAveragePriceTest {
 	
 	public static void main(String[] args) {
 		final List<Trade> trades = setupTrades();
-		final VWAP vwap = new VWAP(trades);
+		final VolumeWeigtedAveragePrice vwap = new VolumeWeigtedAveragePrice(trades);
 		vwap.printAllTrades();
 		vwap.printAllTradeValues();
 		Optional<Double> vwaprice = vwap.calculate();
@@ -37,7 +37,7 @@ public class VWAPTest {
 	@Test
 	public void testAllTradesCount() {
 		final List<Trade> trades = setupTrades();
-		final VWAP vwap = new VWAP(trades);
+		final VolumeWeigtedAveragePrice vwap = new VolumeWeigtedAveragePrice(trades);
 		assertThat(vwap.getAllTradesCount(),is(6L));
 		assertThat(vwap.getAllTradesCount_v1(),is(6L));
 		assertThat(vwap.getAllTradesCount_v2(),is(6L));
@@ -46,21 +46,14 @@ public class VWAPTest {
 	@Test
 	public void testValidTradesCount() {
 		final List<Trade> trades = setupTrades();
-		final VWAP vwap = new VWAP(trades);
+		final VolumeWeigtedAveragePrice vwap = new VolumeWeigtedAveragePrice(trades);
 		assertThat(vwap.getValidTradesCount(),is(5L));
-	}
-
-	@Test
-	public void testSimpleAvergaePrice() {
-		final List<Trade> trades = setupTrades();
-		final VWAP vwap = new VWAP(trades);
-		assertThat(Math.abs(vwap.calculateSimpleAveragePrice().getAsDouble() - 83.58333d), is(lessThan(0.0001)));
 	}
 
 	@Test
 	public void testVWAPPrice() {
 		final List<Trade> trades = setupTrades();
-		final VWAP vwap = new VWAP(trades);
+		final VolumeWeigtedAveragePrice vwap = new VolumeWeigtedAveragePrice(trades);
 		assertThat(Math.abs(vwap.calculate().get() - 100.18328), is(lessThan(0.0001)));
 	}
 }
