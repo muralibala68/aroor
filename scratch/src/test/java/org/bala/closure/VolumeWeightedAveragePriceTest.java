@@ -25,9 +25,11 @@ public class VolumeWeightedAveragePriceTest {
         Optional<Double> vwaprice = vwap.calculate();
         vwaprice.ifPresent(System.out::println);
         vwaprice.ifPresent(p -> LOGGER.info("VWAP: " + p));
-        //trades.forEach(System.out::println);
-        //trades.forEach(t -> LOGGER.info(t.toString()));
+        trades.forEach(System.out::println);
+        trades.forEach(t -> LOGGER.info(t.toString()));
         trades.stream().map(Trade::toString).forEach(LOGGER::info);
+        
+        //Collectors.
     }
 
     private static List<Trade> setupTrades() {
