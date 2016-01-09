@@ -10,8 +10,12 @@ import java.util.Optional;
 
 import org.bala.md.Trade;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VolumeWeigtedAveragePriceTest {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VolumeWeigtedAveragePriceTest.class);   
 
     public static void main(String[] args) {
         final List<Trade> trades = setupTrades();
@@ -20,6 +24,7 @@ public class VolumeWeigtedAveragePriceTest {
         vwap.printAllTradeValues();
         Optional<Double> vwaprice = vwap.calculate();
         vwaprice.ifPresent(System.out::println);
+        vwaprice.ifPresent(p -> LOGGER.info("VWAP: " + p));
     }
 
     private static List<Trade> setupTrades() {
