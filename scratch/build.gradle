@@ -11,6 +11,13 @@ repositories {
 }
 
 dependencies {
+    compile group: 'uk.co.real-logic', name: 'sbe-tool', version: '1.7.6'
+    compile group: 'org.agrona', name: 'agrona', version: '0.9.12'
+    compile group: 'io.aeron', name: 'aeron-driver', version: '1.7.0'
+    compile group: 'io.aeron', name: 'aeron-archive', version: '1.7.0'
+    compile group: 'io.aeron', name: 'aeron-samples', version: '1.7.0'
+    compile group: 'io.aeron', name: 'aeron-client', version: '1.7.0'
+
     compile     group: 'org.slf4j',      name: 'slf4j-api',       version: '1.7.+'
     compile     group: 'ch.qos.logback', name: 'logback-core',    version: '1.+'
     compile     group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
